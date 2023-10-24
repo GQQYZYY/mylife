@@ -99,5 +99,3 @@ worksheet.cell(row=last_row, column=2, value='健康值')
 worksheet.cell(row=last_row, column=3, value=health_score)
 # 保存Excel文件
 workbook.save('myLife.xlsx')
-
-# 下周计划：
