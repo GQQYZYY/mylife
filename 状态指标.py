@@ -4,9 +4,15 @@ from datetime import date,timedelta,datetime
 # 读取Excel文件中的Activity工作表
 df = pd.read_excel('myLife.xlsx', sheet_name='Activity')
 last_day = df['日期'].iloc[-1]  # 获取最后一天的日期
+
+# 下面代码如果修改了mylife中的数据，获取的日期为datetime类型，如果没有修改，获取的日期为str类型
+# 这是修改mylife后使用的代码
 now_day = datetime.strptime(last_day, '%Y-%m-%d').date() # 将字符串转换为日期
 yesterday = now_day - timedelta(days=1) # 获取前一天的日期
 yesterday = str(yesterday)  # 将前一天的日期转换为字符串类型
+#这是没有修改mylife使用的代码
+# yesterday = last_day - timedelta(days=1)
+
 last_day_operations = df.loc[df['日期'] == last_day, '操作']    # 获取最后一天的操作内容
 yesterday_operations = df.loc[df['日期'] == yesterday, '操作']    # 获取昨天的操作内容
 total_operations = len(last_day_operations) # 统计操作内容的总数
@@ -98,7 +104,7 @@ if last_day_entertainment:      # 判断有关娱乐的操作，存在一个加1
     if last_day_entertainment > 10.0:
         entertainment = 20.0
 print("娱乐情绪值：",entertainment)
-play = calculate_score(x=last_day_play, a=180, b=220, c=360, score=10)
+play = calculate_score(x=last_day_play, a=0, b=220, c=720, score=10)
 print("玩手机情绪值：",play)
 # 对比昨天是否有新增操作，有一个则加2分，上限20分。1.找出上周中新增的操作   
 new_operations = set(last_day_operations) - set(yesterday_operations)
