@@ -108,6 +108,7 @@ play = calculate_score(x=last_day_play, a=0, b=220, c=720, score=10)
 print("玩手机情绪值：",play)
 # 对比昨天是否有新增操作，有一个则加2分，上限20分。1.找出上周中新增的操作   
 new_operations = set(last_day_operations) - set(yesterday_operations)
+new_operations_score = 0
 if new_operations:
     new_operations_score = len(new_operations)
     if new_operations_score > 10:
@@ -155,6 +156,7 @@ worksheet = workbook['指标']# 选择"指标"工作表
 values = [
     (last_day, '健康值', health_score),
     (last_day, '专注度', focus_score),
+    (last_day, '体验度', experience_score),
     (last_day, '情绪值', emo_score),
     (last_day, '知识增量', konwledge_score),
     (last_day, '产出分', produce_score)
