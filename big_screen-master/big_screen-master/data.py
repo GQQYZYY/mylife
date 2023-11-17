@@ -66,7 +66,6 @@ class SourceDataDemo:
                 {"name": "财经", "value": 9},
                 {"name": "教育", "value": 8},
                 {"name": "软件", "value": 9},
-                {"name": "其他", "value": 9},
             ]
         }
         self.echart4_data = {
@@ -84,7 +83,6 @@ class SourceDataDemo:
                 {"name": "浙江", "value": 2},
                 {"name": "上海", "value": 3},
                 {"name": "江苏", "value": 3},
-                {"name": "广东", "value": 9},
                 {"name": "北京", "value": 15},
                 {"name": "深圳", "value": 18},
                 {"name": "安徽", "value": 20},
@@ -98,7 +96,7 @@ class SourceDataDemo:
                 {"name": "上海", "value": 70, "value2": 30, "color": "02", "radius": ['49%', '60%']},
                 {"name": "广东", "value": 65, "value2": 35, "color": "03", "radius": ['39%', '50%']},
                 {"name": "北京", "value": 60, "value2": 40, "color": "04", "radius": ['29%', '40%']},
-                {"name": "深圳", "value": 50, "value2": 50, "color": "05", "radius": ['20%', '30%']},
+
             ]
         }
         self.map_1_data = {
